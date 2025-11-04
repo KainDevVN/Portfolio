@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+
+</head> 
+
+
+<body>
+    <header>
+        <a class="logo"> Kain </a>
+
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="skill.html">Skills</a>
+                <a href="exp.html">Experience</a>
+                <a href="edu.html">Education</a>
+                <a href="Contact.html">Contact</a>
+                <a href="wip.html">WIP</a>
+            </nav>
+    </header>    
+    
+<section class="home"> 
+        <div class="home-img">
+            <img src="profilepic.jpg" alt="profile picture">
+        </div>
+    
+    <div class="home-content">
+            <h3> Hello, I am Kain </h3>
+            <h3 class="aka">Also known as Trần Nguyễn Khánh Nhật</h3>
+
+            <h2 class="name"> I am currently a <span class="typing"></span> </h2> 
+            
+            <p class="typing-text"> I am currently a freshman of Ho Chi Minh University of Technology and Education (HCMUTE) </p>
+            
+            <p>This is a collection of my WIP projects, skills, and experiences. Feel free to explore and reach out if you'd like to collaborate!</p>
+
+   <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/ItsCrizp"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.gg/5f546pVq7q"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.instagram.com/081_kainn?igsh=MW5ra3hmeTRneWpmbQ%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+    <a class="button" href="Button.html"> Button? </a>
+    </div>
+
+  </section>
+
+
+<script>
+const words = ["Web Developer", "Newbie Developer", "Designer", "HCMUTE Student"];
+let i = 0, j = 0, currentWord = "", isDeleting = false;
+const el = document.querySelector(".typing");
+
+function type() {
+  currentWord = words[i];
+  el.textContent = currentWord.slice(0, j);
+  j += isDeleting ? -1 : 1;
+
+  if (!isDeleting && j === currentWord.length) return setTimeout(() => isDeleting = true, 1000), setTimeout(type, 200);
+  if (isDeleting && j === 0) return isDeleting = false, i = (i + 1) % words.length, setTimeout(type, 200);
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+type();
+</script>
+
+
+</body>
