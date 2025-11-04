@@ -6,6 +6,9 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" sizes="16x16" href="favicon-16x16.png">
 
 
 </head> 
@@ -53,23 +56,7 @@
   </section>
 
 
-<script>
-const words = ["Web Developer", "New Software Developer", "HCMUTE Student"];
-let i = 0, j = 0, currentWord = "", isDeleting = false;
-const el = document.querySelector(".typing");
-
-function type() {
-  currentWord = words[i];
-  el.textContent = currentWord.slice(0, j);
-  j += isDeleting ? -1 : 1;
-
-  if (!isDeleting && j === currentWord.length) return setTimeout(() => isDeleting = true, 1000), setTimeout(type, 200);
-  if (isDeleting && j === 0) return isDeleting = false, i = (i + 1) % words.length, setTimeout(type, 200);
-  setTimeout(type, isDeleting ? 50 : 100);
-}
-type();
-</script>
-
+<script src="script.js" defer></script>
 
 
 </body>
